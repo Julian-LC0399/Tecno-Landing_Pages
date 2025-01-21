@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log("Conectado a bd"))
-.catch(err => console.error("No se pudo conectar a bd", err));
+.then(() => console.log("Conectado a la BD"))
+.catch(err => console.error("No se pudo conectar a la BD", err));
 
 // Rutas
 app.use("/api/leads", leadsRoutes);
