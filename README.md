@@ -1,2 +1,2 @@
-Tecno-landing pages
+TECNO-LANDIG PAGES
 
