@@ -1,0 +1,284 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif; /* Fuente general para el cuerpo */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Fondo suave para la página */
+}
+
+.container {
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrar el contenedor */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos de la tarjeta de teléfono */
+.phone-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px; /* Aumentar el padding */
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: white;
+  max-width: 100%;
+}
+
+.phone-card:hover {
+  transform: scale(1.05);
+}
+
+.phone-model {
+  font-size: 1.5em;
+  margin-bottom: 16px; /* Aumentar el margen inferior */
+}
+
+.phone-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 16px; /* Aumentar margen inferior */
+}
+
+.phone-description {
+  margin: 16px 0; /* Aumentar el margen superior e inferior */
+  font-size: 0.9em;
+  color: #555;
+}
+
+.phone-price {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 12px; /* Aumentar margen superior */
+}
+
+.phone-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px; /* Aumentar el espacio entre las tarjetas */
+}
+
+/* Estilos responsivos para la tarjeta de teléfono */
+@media (max-width: 768px) {
+  .phone-card {
+    padding: 16px; /* Ajustar el padding en pantallas más pequeñas */
+  }
+
+  .phone-model {
+    font-size: 1.3em; /* Reducir el tamaño de la fuente del modelo */
+  }
+
+  .phone-price {
+    font-size: 1.1em; /* Reducir el tamaño de la fuente del precio */
+  }
+
+  .phone-description {
+    font-size: 0.85em; /* Reducir el tamaño de la fuente de la descripción */
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-card {
+    padding: 12px; /* Aumentar la reducción del padding en pantallas muy pequeñas */
+  }
+
+  .phone-model {
+    font-size: 1.2em; /* Reducir aún más el tamaño de la fuente del modelo */
+  }
+
+  .phone-price {
+    font-size: 1em; /* Reducir aún más el tamaño de la fuente del precio */
+  }
+
+  .phone-description {
+    font-size: 0.8em; /* Reducir aún más el tamaño de la fuente de la descripción */
+  }
+}
+
+/* Estilos de la visualizacion de los detalles */
+
+.phone-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el componente */
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  max-width: 90vw; /* Ancho máximo del modal en relación al viewport */
+  width: 400px; /* Ancho fijo o relativo */
+  overflow: auto; /* Permite el desplazamiento si el contenido es demasiado grande */
+}
+
+.phone-image {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Fondo oscuro para el modal */
+.phone-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: 999; /* Asegúrate de que esté por debajo del contenido del modal */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 600px) {
+  .phone-details {
+    width: 90%; /* Ancho del modal en pantallas pequeñas */
+    padding: 15px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .close-button {
+    font-size: 20px; /* Tamaño de fuente más pequeño para el botón de cerrar */
+  }
+}
+
+@media (max-width: 400px) {
+  .close-button {
+    font-size: 18px; /* Tamaño de fuente aún más pequeño para el botón de cerrar */
+  }
+}
+
+/* Estilos del formulario de contacto */
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.lead-form h3 {
+  margin-bottom: 20px; /* Aumentar el margen inferior */
+  text-align: center;
+}
+
+.lead-form input {
+  margin-bottom: 16px; /* Aumentar el margen inferior */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.lead-form button {
+  padding: 12px; /* Aumentar el padding */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.lead-form button:disabled {
+  background-color: #ccc;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 16px; /* Aumentar el margen inferior */
+  text-align: center;
+}
+
+/* Estilos responsivos para el formulario */
+@media (max-width: 600px) {
+  .lead-form {
+    padding: 15px;
+  }
+
+  .lead-form h3 {
+    font-size: 1.2em;
+  }
+}
+
+/* Estilos del chatbot */
+
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chatbot-window {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 300px;
+  position: absolute;
+  bottom: 60px; /* Ajusta según el tamaño del botón */
+  right: 0;
+  max-width: 90vw; /* Asegura que no exceda el 90% del ancho de la ventana */
+}
+
+.chatbot-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: calc(100% - 60px);
+  padding: 5px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 90%; /* Ancho del chatbot en pantallas más pequeñas */
+    max-width: 100%; /* Asegura que no exceda el 100% del ancho de la ventana */
+  }
+
+  input[type="text"] {
+    width: calc(100% - 70px); /* Ajusta el ancho del input en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-toggle {
+    font-size: 20px; /* Reduce el tamaño del botón en pantallas muy pequeñas */
+  }
+
+  .chatbot-window {
+    width: 95%; /* Ancho del chatbot en pantallas muy pequeñas */
+  }
+}
