@@ -97,22 +97,22 @@ const Chatbot = () => {
                     </div>
                 );
         } else {
-            return "Lo siento, no entiendo tu pregunta. ¿Puedes reformularla?";
+            return "Lo siento, no hay informacion sobre ese modelo de teléfono";
         }
     };
 
     return (
         <div className="chatbot-wrapper">
             <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? 'Cerrar Chat' : 'Abrir Chat'}
+                {isOpen ? 'Cerrar Chatbot' : 'Chatbot'}
             </button>
             {isOpen && (
                 <div className="chatbot-container">
-                    <h2 className="chatbot-header">Chatbot</h2>
+                    <h2 className="chatbot-header">Habla con JELC sobre lo que necesites saber</h2>
                     <div className="chatbot-messages">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.sender}`}>
-                                <strong>{msg.sender === 'user' ? 'Tú' : 'Bot'}:</strong> {msg.text}
+                                <strong>{msg.sender === 'user' ? 'Tú' : 'JELC'}:</strong> {msg.text}
                             </div>
                         ))}
                     </div>
