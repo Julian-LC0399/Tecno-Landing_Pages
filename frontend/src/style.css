@@ -58,6 +58,30 @@ body {
   gap: 30px; /* Aumentar el espacio entre las tarjetas */
 }
 
+.details-button {
+  padding: 10px 15px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.details-button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.details-button:focus {
+  outline: none; /* Sin contorno al hacer clic */
+}
+
+.details-button:disabled {
+  background-color: #cccccc; /* Color de fondo para el botón deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor al pasar el mouse */
+}
+
 /* Estilos responsivos para la tarjeta de teléfono */
 @media (max-width: 768px) {
   .phone-card {
@@ -160,49 +184,55 @@ body {
 }
 
 /* Estilos del formulario de contacto */
+
+.lead-form-wrapper {
+  margin: 20px;
+}
+
+.lead-form-toggle {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.lead-form-toggle:hover {
+  background-color: #0056b3;
+}
+
 .lead-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-}
-
-.lead-form h3 {
-  margin-bottom: 20px; /* Aumentar el margen inferior */
-  text-align: center;
 }
 
 .lead-form input {
-  margin-bottom: 16px; /* Aumentar el margen inferior */
+  margin: 5px 0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
 }
 
 .lead-form button {
-  padding: 12px; /* Aumentar el padding */
-  background-color: #007bff;
-  color: white;
+  padding: 10px;
   border: none;
   border-radius: 4px;
+  background-color: #007bff;
+  color: white;
   cursor: pointer;
-  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.lead-form button:disabled {
-  background-color: #ccc;
+.lead-form button:hover {
+  background-color: #0056b3;
 }
 
 .error-message {
   color: red;
-  margin-bottom: 16px; /* Aumentar el margen inferior */
-  text-align: center;
 }
 
 /* Estilos responsivos para el formulario */
@@ -218,67 +248,100 @@ body {
 
 /* Estilos del chatbot */
 
-.chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.chatbot-toggle {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.chatbot-window {
-  background-color: white;
+.chatbot-container {
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   padding: 10px;
-  width: 300px;
-  position: absolute;
-  bottom: 60px; /* Ajusta según el tamaño del botón */
-  right: 0;
-  max-width: 90vw; /* Asegura que no exceda el 90% del ancho de la ventana */
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.chatbot-messages {
-  max-height: 200px;
-  overflow-y: auto;
+.chatbot-header {
+  font-size: 1.5em;
+  text-align: center;
   margin-bottom: 10px;
 }
 
-input[type="text"] {
-  width: calc(100% - 60px);
-  padding: 5px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+.chatbot-messages {
+  height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
 }
 
-button[type="submit"] {
-  padding: 5px 10px;
+.message {
+  margin: 5px 0;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .chatbot-window {
-    width: 90%; /* Ancho del chatbot en pantallas más pequeñas */
-    max-width: 100%; /* Asegura que no exceda el 100% del ancho de la ventana */
-  }
-
-  input[type="text"] {
-    width: calc(100% - 70px); /* Ajusta el ancho del input en pantallas más pequeñas */
-  }
+.message.user {
+  text-align: right;
 }
 
-@media (max-width: 480px) {
-  .chatbot-toggle {
-    font-size: 20px; /* Reduce el tamaño del botón en pantallas muy pequeñas */
-  }
+.message.bot {
+  text-align: left;
+}
 
-  .chatbot-window {
-    width: 95%; /* Ancho del chatbot en pantallas muy pequeñas */
+.chatbot-input {
+  display: flex;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chatbot-input button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.chatbot-input button:hover {
+  background-color: #0056b3;
+}
+
+.chatbot-toggle {
+  padding: 10px 15px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.chatbot-toggle:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.chatbot-toggle:focus {
+  outline: none; /* Sin contorno al hacer clic */
+}
+
+.chatbot-toggle:disabled {
+  background-color: #cccccc; /* Color de fondo para el botón deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor al pasar el mouse */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .chatbot-container {
+      width: 90%;
   }
 }
