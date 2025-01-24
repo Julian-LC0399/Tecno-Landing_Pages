@@ -68,7 +68,7 @@ const Chatbot = () => {
     const getBotResponse = (message) => {
         const lowerMessage = message.toLowerCase();
         if (lowerMessage.includes('hola')) {
-            return "¡Hola! ¿En qué puedo ayudarte hoy?";
+            return "¡Hola! ¿Que modelo de teléfono te interesa?";
         } else if (lowerMessage.includes('camon 19')) {
             return (
                 <div>
