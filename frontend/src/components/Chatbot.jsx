@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import camon19Image from '../images/camon19.png'; // Asegúrate de que la ruta sea correcta
-import spark8Image from '../images/spark8.jpg'; // Asegúrate de que la ruta sea correcta
+import camon19Image from '../images/camon19.png'; 
+import spark8Image from '../images/spark8.jpg'; 
+import spark30Image from '../images/spark30.png'; 
 
 const phones = [
     {
@@ -9,8 +10,10 @@ const phones = [
         description: (
             <div>
                 <p><strong>Cámara:</strong> Alta resolución con IA para fotos de calidad.</p>
-                <p><strong>Pantalla:</strong> 6.8 pulgadas, ideal para multimedia.</p>
+                <p><strong>Pantalla:</strong> 6.8 pulgadas.</p>
                 <p><strong>Batería:</strong> Duradera, perfecta para uso diario.</p>
+                <p><strong>Almacenamiento:</strong> 128GB.</p>
+                <p><strong>Ram:</strong> 6GB.</p>
             </div>
         ),
         price: 199.99,
@@ -21,12 +24,28 @@ const phones = [
         description: (
             <div>
                 <p><strong>Cámara:</strong> Doble cámara para capturar momentos.</p>
-                <p><strong>Pantalla:</strong> 6.5 pulgadas, buena para juegos y videos.</p>
+                <p><strong>Pantalla:</strong> 6.5 pulgadas.</p>
                 <p><strong>Batería:</strong> Duradera, perfecta para uso diario.</p>
+                <p><strong>Almacenamiento:</strong> 64GB.</p>
+                <p><strong>Ram:</strong> 2GB.</p>
             </div>
         ),
         price: 149.99,
     },
+    {
+        model: 'Tecno Spark 30',
+        image: spark30Image,
+        description: (
+            <div>
+               <p><strong>Cámara:</strong> Tres cámaras para capturar momentos.</p>
+               <p><strong>Pantalla:</strong> 6.7 pulgadas</p>
+                <p><strong>Batería:</strong> Duradera, perfecta para uso diario</p>
+                <p><strong>Almacenamiento:</strong> 256GB.</p>
+                <p><strong>Ram:</strong> 8GB.</p>
+            </div>
+        ),
+        price: 179.99,
+    }
 ];
 
 const Chatbot = () => {
@@ -49,7 +68,7 @@ const Chatbot = () => {
     const getBotResponse = (message) => {
         const lowerMessage = message.toLowerCase();
         if (lowerMessage.includes('hola')) {
-            return "¡Hola! ¿En qué puedo ayudarte hoy?";
+            return "¡Hola! ¿Que modelo de teléfono te interesa?";
         } else if (lowerMessage.includes('camon 19')) {
             return (
                 <div>
@@ -68,23 +87,32 @@ const Chatbot = () => {
                     <p><strong>Precio:</strong> ${phones[1].price}</p>
                 </div>
             );
+            } else if (lowerMessage.includes('spark 30')) {
+                return (
+                    <div>
+                        <h3>{phones[2].model}</h3>
+                        <img src={phones[2].image} alt={phones[2].model} style={{ width: '100px' }} />
+                        {phones[2].description}
+                        <p><strong>Precio:</strong> ${phones[2].price}</p>
+                    </div>
+                );
         } else {
-            return "Lo siento, no entiendo tu pregunta. ¿Puedes reformularla?";
+            return "Lo siento, no hay informacion sobre ese modelo de teléfono";
         }
     };
 
     return (
         <div className="chatbot-wrapper">
             <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? 'Cerrar Chat' : 'Abrir Chat'}
+                {isOpen ? 'Cerrar Chatbot' : 'Chatbot'}
             </button>
             {isOpen && (
                 <div className="chatbot-container">
-                    <h2 className="chatbot-header">Chatbot</h2>
+                    <h2 className="chatbot-header">Habla con JELC sobre lo que necesites saber</h2>
                     <div className="chatbot-messages">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.sender}`}>
-                                <strong>{msg.sender === 'user' ? 'Tú' : 'Bot'}:</strong> {msg.text}
+                                <strong>{msg.sender === 'user' ? 'Tú' : 'JELC'}:</strong> {msg.text}
                             </div>
                         ))}
                     </div>
