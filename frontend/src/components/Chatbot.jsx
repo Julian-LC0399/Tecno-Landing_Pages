@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import camon19Image from '../images/camon19.png'; // Asegúrate de que la ruta sea correcta
-import spark8Image from '../images/spark8.jpg'; // Asegúrate de que la ruta sea correcta
-import spark30Image from '../images/spark30.png'; // Asegúrate de que la ruta sea correcta
+import camon19Image from '../images/camon19.png'; 
+import spark8Image from '../images/spark8.jpg'; 
+import spark30Image from '../images/spark30.png'; 
 
 const phones = [
     {
