@@ -14,7 +14,7 @@ const PhoneDetails = ({ phone, onClose }) => {
         <button
           className="close-button"
           onClick={onClose}
-          aria-label="Cerrar detalles del teléfono"
+          aria-label="Cerrar"
         ></button>
         <h2 id="phone-details-title">{phone.model}</h2>
         <img src={phone.image} alt={phone.model} className="phone-image" />
