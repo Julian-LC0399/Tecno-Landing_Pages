@@ -97,7 +97,7 @@ const Chatbot = () => {
                     </div>
                 );
         } else {
-            return "Lo siento, no hay informacion sobre ese modelo de teléfono";
+            return "Lo siento, no hay información sobre ese modelo de teléfono";
         }
     };
 
