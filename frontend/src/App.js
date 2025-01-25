@@ -68,7 +68,7 @@ const App = () => {
 
     return (
         <div className="landing-page">
-            <h1>Catálogo de Teléfonos Tecno</h1>
+            <h1>Catálogo de teléfonos tecno</h1>
             <PhoneCatalog phones={phones} onSelect={handleSelectPhone} />
             <LeadForm />
             <Chatbot />
