@@ -104,7 +104,7 @@ const Chatbot = () => {
     return (
         <div className="chatbot-wrapper">
             <button className="chatbot-toggle" onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? 'Cerrar Chatbot' : 'Chatbot'}
+                {isOpen ? 'Cerrar chatbot' : 'Chatbot'}
             </button>
             {isOpen && (
                 <div className="chatbot-container">

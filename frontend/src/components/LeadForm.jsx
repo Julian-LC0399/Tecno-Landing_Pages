@@ -31,7 +31,7 @@ const LeadForm = () => {
   return (
     <div className="lead-form-wrapper">
       <button className="lead-form-toggle" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Cerrar Formulario" : "Formulario de suscripción"}
+        {isOpen ? "Cerrar formulario" : "Formulario de suscripción"}
       </button>
       {isOpen && (
         <form onSubmit={handleSubmit} className="lead-form">
