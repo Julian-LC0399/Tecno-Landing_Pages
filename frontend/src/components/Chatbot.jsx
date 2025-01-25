@@ -108,7 +108,7 @@ const Chatbot = () => {
             </button>
             {isOpen && (
                 <div className="chatbot-container">
-                    <h2 className="chatbot-header">Habla con JELC sobre lo que necesites saber</h2>
+                    <h2 className="chatbot-header">Habla con JELC sobre lo que necesites saber de los teléfonos</h2>
                     <div className="chatbot-messages">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.sender}`}>
